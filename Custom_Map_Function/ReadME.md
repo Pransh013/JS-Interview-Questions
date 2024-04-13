@@ -2,6 +2,12 @@
 
 - The `Map()` function in JS is used to iterate over an array and apply a transformation to each element, **returning a new array** with transformed elements. It **does not alter the original array.**
 
+  ```js
+  const numbers = [1, 2, 3, 4];
+  const squaredNumbers = numbers.map((number) => number * number);
+  console.log(squaredNumbers); // Output: [1, 4, 9, 16]
+  ```
+
 ### Creating a Custom Map Function
 
 ```js
@@ -22,7 +28,7 @@ function customMap(arr, cb) {
   console.log(squaredNumbers); // Output: [1, 4, 9, 16]
   ```
 
-- Here `customMap` takes two parameters: the array nums and a callback function that squares each number. The output is identical to using the native map function but the way we are using it is not. So to achieve identical behaviour we can add it to **array prototype**
+- Here `customMap` takes two parameters: the array nums and a callback function that squares each number. The output is identical to using the native map function but the way we are using it is not. So to achieve identical behaviour we can add it to **array prototype.**
 
 ### Adding Custom Map to Array.prototype
 
@@ -32,7 +38,7 @@ function customMap(arr, cb) {
   Array.prototype.customMap = function (callback) {
     let result = [];
     for (let i = 0; i < this.length; i++) {
-      result.push(callback(this[i], i, this)); // `this` refers to the array
+      result.push(callback(this[i])); // `this` refers to the array
     }
     return result;
   };
