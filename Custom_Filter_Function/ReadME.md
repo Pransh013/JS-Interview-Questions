@@ -45,7 +45,7 @@
   ```
 
 - By adding customFilter as a method of Array.prototype, every array instance inherits `this` method. In the customFilter function, `this` refers to the array instance on which customFilter is called.
-- After adding the customFilter function to Array.prototype, you can use it like this:
+- After adding the customFilter function to Array.prototype, we can use it like this:
 
   ```js
   const numbers = [1, 2, 3, 4];

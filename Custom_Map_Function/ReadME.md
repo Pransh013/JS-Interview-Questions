@@ -45,7 +45,7 @@ function customMap(arr, cb) {
   ```
 
 - By adding customMap as a method of Array.prototype, every array instance inherits `this` method. In the customMap function, this refers to the array instance on which customMap is called.
-- After adding the customMap function to Array.prototype, you can use it like this:
+- After adding the customMap function to Array.prototype, we can use it like this:
 
   ```js
   const numbers = [1, 2, 3, 4];
